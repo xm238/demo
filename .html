@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Nostalji | Turkish Breakfast & Specialty Coffee | Kadıköy, İstanbul</title>
+  <meta name="description" content="Traditional Turkish breakfast and specialty coffee in a cozy atmosphere. Fresh pastries baked daily, outdoor seating available in Kadıköy, Moda.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            coffee: {
+              50: '#faf7f5',
+              100: '#f2ece6',
+              200: '#e4d5c7',
+              300: '#d4b8a3',
+              400: '#c49a7d',
+              500: '#b07d5a',
+              600: '#9a6549',
+              700: '#7f523d',
+              800: '#694535',
+              900: '#58382f',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .gallery-item { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .gallery-item:hover { transform: translateY(-4px) scale(1.02); }
+    .menu-card { transition: all 0.3s ease; }
+    .menu-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -10px rgba(106, 69, 53, 0.15); }
+    .instagram-item { transition: all 0.3s ease; }
+    .instagram-item:hover { opacity: 0.9; }
+    .service-icon { animation: bounce 2s infinite; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    .fade-in { animation: fadeIn 0.6s ease-out forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+  </style>
+</head>
+<body class="font-sans text-coffee-900 bg-coffee-50">
+  
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300">
+    <div id="navbarContainer" class="transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-3">
+            <svg class="w-12 h-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Coffee cup -->
+              <circle cx="50" cy="50" r="45" fill="#9a6549"/>
+              <circle cx="50" cy="50" r="40" fill="#faf7f5"/>
+              <!-- Cup body -->
+              <path d="M30 40 C30 40, 30 70, 50 70 C70 70, 70 40, 70 40" stroke="#9a6549" stroke-width="4" fill="none"/>
+              <!-- Cup handle -->
+              <path d="M70 45 C80 45, 80 60, 70 60" stroke="#9a6549" stroke-width="4" fill="none"/>
+              <!-- Steam lines -->
+              <path d="M40 30 C40 30, 35 20, 40 15" stroke="#7f523d" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M50 28 C50 28, 45 18, 50 13" stroke="#7f523d" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M60 30 C60 30, 55 20, 60 15" stroke="#7f523d" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Coffee liquid -->
+              <ellipse cx="50" cy="42" rx="15" ry="4" fill="#58382f"/>
+            </svg>
+            <div>
+              <span class="font-serif text-xl font-semibold text-coffee-800">Café Nostalji</span>
+            </div>
+          </a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#home" class="text-coffee-700 hover:text-coffee-900 font-medium transition">Ana Sayfa</a>
+          <a href="#menu" class="text-coffee-700 hover:text-coffee-900 font-medium transition">Menü</a>
+          <a href="#gallery" class="text-coffee-700 hover:text-coffee-900 font-medium transition">Galeri</a>
+          <a href="#about" class="text-coffee-700 hover:text-coffee-900 font-medium transition">Hakkımızda</a>
+          <a href="#contact" class="bg-coffee-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-coffee-700 transition">İletişim</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden p-2 text-coffee-800">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-md border-t border-coffee-200">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#home" class="block py-2 text-coffee-700 font-medium">Ana Sayfa</a>
+        <a href="#menu" class="block py-2 text-coffee-700 font-medium">Menü</a>
+        <a href="#gallery" class="block py-2 text-coffee-700 font-medium">Galeri</a>
+        <a href="#about" class="block py-2 text-coffee-700 font-medium">Hakkımızda</a>
+        <a href="#contact" class="block py-2 text-coffee-600 font-semibold">İletişim</a>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen relative flex items-center">
+    <div class="absolute inset-0">
+      <img src="http://static.photos/restaurant/1200x630/42" alt="Café Nostalji Interior" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-coffee-900/80 via-coffee-800/60 to-transparent"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+      <div class="max-w-2xl fade-in">
+        <div class="flex items-center gap-2 mb-6">
+          <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">★ 4.3/5 Google Reviews</span>
+          <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">Açık</span>
+        </div>
+        <h1 class="font-serif text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          Geleneksel Lezzet, <br>
+          <span class="text-coffee-200">Modern Atmosfer</span>
+        </h1>
+        <p class="text-xl text-coffee-100 mb-8 leading-relaxed">
+          Kadıköy Moda'nın kalbinde, geleneksel Türk kahvaltısı ve özel kahve çeşitleriyle hizmetinizdeyiz. Günlük taze pastalar, huzurlu çalışma ortamı ve samimi bir atmosfer.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#menu" class="bg-coffee-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-coffee-600 transition text-center">
+            Menüyü Gör
+          </a>
+          <a href="tel:+902165550142" class="bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition flex items-center justify-center gap-2">
+            <i data-lucide="phone" class="w-5 h-5"></i>
+            +90 216 555 0142
+          </a>
+        </div>
+        
+        <!-- Quick Info -->
+        <div class="mt-12 flex flex-wrap gap-6 text-coffee-100">
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-5 h-5"></i>
+            <span>Moda Caddesi No:47</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="clock" class="w-5 h-5"></i>
+            <span>Her gün 08:00 - 23:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-coffee-100 rounded-2xl flex items-center justify-center mx-auto mb-4 service-icon">
+            <i data-lucide="utensils" class="w-8 h-8 text-coffee-600"></i>
+          </div>
+          <h3 class="font-semibold text-coffee-800">Dine-in</h3>
+          <p class="text-sm text-coffee-600 mt-1">Rahat iç mekan</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-coffee-100 rounded-2xl flex items-center justify-center mx-auto mb-4 service-icon" style="animation-delay: 0.2s;">
+            <i data-lucide="package" class="w-8 h-8 text-coffee-600"></i>
+          </div>
+          <h3 class="font-semibold text-coffee-800">Takeaway</h3>
+          <p class="text-sm text-coffee-600 mt-1">Paket servisi</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-coffee-100 rounded-2xl flex items-center justify-center mx-auto mb-4 service-icon" style="animation-delay: 0.4s;">
+            <i data-lucide="sun" class="w-8 h-8 text-coffee-600"></i>
+          </div>
+          <h3 class="font-semibold text-coffee-800">Outdoor</h3>
+          <p class="text-sm text-coffee-600 mt-1">Açık hava oturumu</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-coffee-100 rounded-2xl flex items-center justify-center mx-auto mb-4 service-icon" style="animation-delay: 0.6s;">
+            <i data-lucide="wifi" class="w-8 h-8 text-coffee-600"></i>
+          </div>
+          <h3 class="font-semibold text-coffee-800">Free Wi-Fi</h3>
+          <p class="text-sm text-coffee-600 mt-1">Çalışma dostu</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="py-24 bg-coffee-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-coffee-600 font-medium tracking-wider uppercase text-sm">Lezzetlerimiz</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-coffee-900 mt-3">Menü</h2>
+        <p class="text-coffee-600 mt-4 max-w-2xl mx-auto">Taze ve kaliteli malzemelerle hazırlanan menümüzden bazı özel seçkiler</p>
+      </div>
+      
+      <!-- Menu Categories -->
+      <div class="flex justify-center gap-4 mb-12 flex-wrap">
+        <button class="menu-tab active px-6 py-3 rounded-full bg-coffee-600 text-white font-medium transition" data-category="all">Tümü</button>
+        <button class="menu-tab px-6 py-3 rounded-full bg-white text-coffee-700 font-medium hover:bg-coffee-100 transition" data-category="breakfast">Kahvaltı</button>
+        <button class="menu-tab px-6 py-3 rounded-full bg-white text-coffee-700 font-medium hover:bg-coffee-100 transition" data-category="coffee">Kahve</button>
+        <button class="menu-tab px-6 py-3 rounded-full bg-white text-coffee-700 font-medium hover:bg-coffee-100 transition" data-category="dessert">Tatlı</button>
+        <button class="menu-tab px-6 py-3 rounded-full bg-white text-coffee-700 font-medium hover:bg-coffee-100 transition" data-category="beverage">İçecek</button>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="menuGrid">
+        <!-- Turkish Breakfast Plate -->
+        <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg" data-category="breakfast">
+          <div class="relative h-48 overflow-hidden">
+            <img src="http://static.photos/food/640x360/101" alt="Turkish Breakfast Plate" class="w-full h-full object-cover">
+            <div class="absolute top-4 right-4 bg-coffee-500 text-white px-3 py-1 rounded-full text-sm font-bold">₺185</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold text-coffee-900">Turkish Breakfast Plate</h3>
+            <p class="text-coffee-600 mt-2 text-sm">Sahanda yumurta, zeytin çeşitleri, peynir, bal-kaymak, domates, salatalık, tereyağ ve sıcak ekmek</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex gap-2">
+                <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Vejetaryen</span>
+                <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Popüler</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Filter Coffee -->
+        <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg" data-category="coffee">
+          <div class="relative h-48 overflow-hidden">
+            <img src="http://static.photos/coffee/640x360/201" alt="Filter Coffee" class="w-full h-full object-cover">
+            <div class="absolute top-4 right-4 bg-coffee-500 text-white px-3 py-1 rounded-full text-sm font-bold">₺65</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold text-coffee-900">Filter Coffee</h3>
+            <p class="text-coffee-600 mt-2 text-sm">Etiyopya ve Kolombiya harmanı, özenle demlenmiş filtre kahve</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex gap-2">
+                <span class="text-xs bg-coffee-100 text-coffee-700 px-2 py-1 rounded">Günlük Taze</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cappuccino -->
+        <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg" data-category="coffee">
+          <div class="relative h-48 overflow-hidden">
+            <img src="http://static.photos/coffee/640x360/202" alt="Cappuccino" class="w-full h-full object-cover">
+            <div class="absolute top-4 right-4 bg-coffee-500 text-white px-3 py-1 rounded-full text-sm font-bold">₺75</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold text-coffee-900">Cappuccino</h3>
+            <p class="text-coffee-600 mt-2 text-sm">İtalyan espresso, buharlanmış süt ve kadifemsi süt köpüğü ile latte art</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex gap-2">
+                <span class="text-xs bg-coffee-100 text-coffee-700 px-2 py-1 rounded">Barista Özel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Homemade Cakes -->
+        <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg" data-category="dessert">
+          <div class="relative h-48 overflow-hidden">
+            <img src="http://static.photos/food/640x360/301" alt="Homemade Cakes" class="w-full h-full object-cover">
+            <div class="absolute top-4 right-4 bg-coffee-500 text-white px-3 py-1 rounded-full text-sm font-bold">₺85</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold text-coffee-900">Homemade Cakes</h3>
+            <p class="text-coffee-600 mt-2 text-sm">Günlük ev yapımı kekler - limonlu, kakaolu veya havuçlu seçenekleri mevcut</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex gap-2">
+                <span class="text-xs bg-pink-100 text-pink-700 px-2 py-1 rounded">Ev Yapımı</span>
+                <span class="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded">Günlük</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Fresh Orange Juice -->
+        <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg" data-category="beverage">
+          <div class="relative h-48 overflow-hidden">
+            <img src="http://static.photos/food/640x360/401" alt="Fresh Orange Juice" class="w-full h-full object-cover">
+            <div class="absolute top-4 right-4 bg-coffee-500 text-white px-3 py-1 rounded-full text-sm font-bold">₺55</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold text-coffee-900">Fresh Orange Juice</h3>
+            <p class="text-coffee-600 mt-2 text-sm">Sipariş üzerine sıkılmış taze portakal suyu, hiçbir katkı maddesi</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex gap-2">
+                <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Taze Sıkma</span>
+                <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Vitamin C</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Latte -->
+        <div class="menu-card bg-white rounded-2xl overflow-hidden shadow-lg" data-category="coffee">
+          <div class="relative h-48 overflow-hidden">
+            <img src="http://static.photos/coffee/640x360/203" alt="Latte" class="w-full h-full object-cover">
+            <div class="absolute top-4 right-4 bg-coffee-500 text-white px-3 py-1 rounded-full text-sm font-bold">₺70</div>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl font-semibold text-coffee-900">Latte</h3>
+            <p class="text-coffee-600 mt-2 text-sm">Kremamsı espresso bazlı latte, isteğe göre badem/soya sütü seçeneği</p>
+            <div class="flex items-center justify-between mt-4">
+              <div class="flex gap-2">
+                <span class="text-xs bg-coffee-100 text-coffee-700 px-2 py-1 rounded">Süt Alternatifli</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <button class="border-2 border-coffee-600 text-coffee-600 px-8 py-3 rounded-full font-medium hover:bg-coffee-600 hover:text-white transition">
+          Tam Menüyü Gör (PDF)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery -->
+  <section id="gallery" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-coffee-600 font-medium tracking-wider uppercase text-sm">Mekanımızdan</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-bold text-coffee-900 mt-3">Galeri</h2>
+        <p class="text-coffee-600 mt-4">Kafemizin sıcak atmosferinden kareler</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square cursor-pointer" onclick="openLightbox(0)">
+          <img src="http://static.photos/restaurant/640x360/501" alt="Interior" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square cursor-pointer" onclick="openLightbox(1)">
+          <img src="http://static.photos/coffee/640x360/502" alt="Coffee" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square cursor-pointer row-span-2" onclick="openLightbox(2)">
+          <img src="http://static.photos/restaurant/640x360/503" alt="Restaurant" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square cursor-pointer" onclick="openLightbox(3)">
+          <img src="http://static.photos/food/640x360/504" alt="Food" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square cursor-pointer" onclick="openLightbox(4)">
+          <img src="http://static.photos/restaurant/640x360/505" alt="Outdoor" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square cursor-pointer" onclick="openLightbox(5)">
+          <img src="http://static.photos/coffee/640x360/506" alt="Coffee Art" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square cursor-pointer" onclick="openLightbox(6)">
+          <img src="http://static.photos/food/640x360/507" alt="Dessert" class="w-full h-full object-cover">
+        </div>
+        <div class="gallery-item rounded-2xl overflow-hidden aspect-square cursor-pointer" onclick="openLightbox(7)">
+          <img src="http://static.photos/restaurant/640x360/508" alt="Workspace" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 bg-black/95 z-50 hidden flex items-center justify-center">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white hover:text-coffee-300 transition">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <button onclick="prevImage()" class="absolute left-6 text-white hover:text-coffee-300 transition">
+      <i data-lucide="chevron-left" class="w-10 h-10"></i>
+    </button>
+    <button onclick="nextImage()" class="absolute right-6 text-white hover:text-coffee-300 transition">
+      <i data-lucide="chevron-right" class="w-10 h-10"></i>
+    </button>
+    <img id="lightboxImage" src="" alt="" class="max-w-5xl max-h-[80vh] object-contain rounded-lg">
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 bg-coffee-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-coffee-300 font-medium tracking-wider uppercase text-sm">Hakkımızda</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-bold mt-4 mb-6">Kadıköy Moda'nın Kalbinde Bir Durak</h2>
+          <p class="text-coffee-100 text-lg leading-relaxed mb-6">
+            Café Nostalji, geleneksel Türk kahvaltı kültürünü modern bir yaklaşımla buluşturan, samimi ve sıcak bir mekandır. 2019 yılından bu yana Moda Caddesi'nde hizmet vermekteyiz.
+          </p>
+          <p class="text-coffee-100 leading-relaxed mb-8">
+            Her sabah taze pişirilen pastalarımız, özenle seçilmiş kahve çekirdeklerimiz ve güleryüzlü ekibimizle sizleri ağırlamaktan mutluluk duyuyoruz. İster arkadaşlarınızla sohbet etmek, ister sessizce çalışmak için ideal bir ortam sunuyoruz.
+          </p>
+          
+          <div class="grid grid-cols-3 gap-8 mb-8">
+            <div>
+              <div class="text-3xl font-bold text-coffee-300">4+</div>
+              <div class="text-sm text-coffee-200">Yıllık Deneyim</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-coffee-300">127+</div>
+              <div class="text-sm text-coffee-200">Memnun Müşteri</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-coffee-300">4.3</div>
+              <div class="text-sm text-coffee-200">Google Puanı</div>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-6">
+            <a href="https://instagram.com/cafenostalji" target="_blank" class="flex items-center gap-2 text-coffee-300 hover:text-white transition">
+              <i data-lucide="instagram" class="w-6 h-6"></i>
+              <span>@cafenostalji</span>
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="http://static.photos/restaurant/1024x576/42" alt="Café Nostalji Team" class="rounded-2xl shadow-2xl">
+          <div class="absolute -bottom-6 -left-6 bg-coffee-500 p-6 rounded-2xl shadow-xl">
+            <div class="flex items-center gap-3">
+              <i data-lucide="award" class="w-10 h-10 text-white"></i>
+              <div>
+                <div class="font-bold text-white">Kadıköy</div>
+                <div class="text-coffee-100 text-sm">En İyi Kahvaltı 2023</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Hours -->
+  <section id="location" class="py-24 bg-coffee-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <!-- Info -->
+        <div>
+          <span class="text-coffee-600 font-medium tracking-wider uppercase text-sm">Konum</span>
+          <h2 class="font-serif text-4xl font-bold text-coffee-900 mt-3 mb-8">Bizi Ziyaret Edin</h2>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-coffee-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="map-pin" class="w-6 h-6 text-coffee-700"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-coffee-900">Adres</h3>
+                <p class="text-coffee-600 mt-1">Moda Caddesi No:47, Kadıköy/İstanbul</p>
+                <a href="https://maps.google.com/?q=Café+Nostalji+Moda+Kadıköy" target="_blank" class="text-coffee-600 hover:text-coffee-800 text-sm underline mt-2 inline-block">Yol Tarifi Al →</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-coffee-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="clock" class="w-6 h-6 text-coffee-700"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-coffee-900">Çalışma Saatleri</h3>
+                <p class="text-coffee-600 mt-1">Pazartesi - Pazar</p>
+                <p class="text-coffee-800 font-medium">08:00 - 23:00</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-coffee-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="phone" class="w-6 h-6 text-coffee-700"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-coffee-900">Telefon</h3>
+                <a href="tel:+902165550142" class="text-coffee-600 hover:text-coffee-800 mt-1 block">+90 216 555 0142</a>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-coffee-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i data-lucide="credit-card" class="w-6 h-6 text-coffee-700"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-coffee-900">Ödeme Seçenekleri</h3>
+                <p class="text-coffee-600 mt-1">Nakit, Kredi Kartı, Temassız Ödeme</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Google Maps Embed -->
+          <div class="mt-8 rounded-2xl overflow-hidden h-64 bg-coffee-200">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.595896623432!2d29.0245!3d40.9795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab86c5d9be5e1%3A0xe52e0e9e3208c54a!2sModa%2C%20Kad%C4%B1k%C3%B6y%2FIstanbul!5e0!3m2!1sen!2str!4v1234567890" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div id="contact" class="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
+          <h3 class="font-serif text-2xl font-bold text-coffee-900 mb-2">Bize Ulaşın</h3>
+          <p class="text-coffee-600 mb-8">Rezervasyon veya özel talepleriniz için form doldurun</p>
+          
+          <form id="contactForm" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-coffee-700 mb-2">Adınız</label>
+                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-coffee-200 focus:border-coffee-500 focus:ring-2 focus:ring-coffee-200 outline-none transition" placeholder="Ali Veli">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-coffee-700 mb-2">Telefon</label>
+                <input type="tel" class="w-full px-4 py-3 rounded-xl border border-coffee-200 focus:border-coffee-500 focus:ring-2 focus:ring-coffee-200 outline-none transition" placeholder="05XX XXX XX XX">
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-coffee-700 mb-2">E-posta</label>
+              <input type="email" required class="w-full px-4 py-3 rounded-xl border border-coffee-200 focus:border-coffee-500 focus:ring-2 focus:ring-coffee-200 outline-none transition" placeholder="email@ornek.com">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-coffee-700 mb-2">Konu</label>
+              <select class="w-full px-4 py-3 rounded-xl border border-coffee-200 focus:border-coffee-500 focus:ring-2 focus:ring-coffee-200 outline-none transition">
+                <option>Genel Bilgi</option>
+                <option>Rezervasyon</option>
+                <option>Özel Etkinlik</option>
+                <option>İş Birliği</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-coffee-700 mb-2">Mesajınız</label>
+              <textarea rows="4" class="w-full px-4 py-3 rounded-xl border border-coffee-200 focus:border-coffee-500 focus:ring-2 focus:ring-coffee-200 outline-none transition resize-none" placeholder="Mesajınızı yazın..."></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-coffee-600 text-white py-4 rounded-xl font-semibold hover:bg-coffee-700 transition flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              Gönder
+            </button>
+          </form>
+          
+          <!-- Success Message -->
+          <div id="successMessage" class="hidden text-center py-12">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="check" class="w-8 h-8 text-green-600"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-coffee-900 mb-2">Teşekkürler!</h4>
+            <p class="text-coffee-600">Mesajınız alındı, en kısa sürede size dönüş yapacağız.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Feed Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <i data-lucide="instagram" class="w-8 h-8 text-coffee-600 mx-auto mb-4"></i>
+        <h2 class="font-serif text-3xl font-bold text-coffee-900">@cafenostalji</h2>
+        <p class="text-coffee-600 mt-2">Instagram'da bizi takip edin</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+        <a href="https://instagram.com/cafenostalji" target="_blank" class="instagram-item relative aspect-square rounded-xl overflow-hidden group">
+          <img src="http://static.photos/coffee/320x240/11" alt="Instagram" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+          </div>
+        </a>
+        <a href="https://instagram.com/cafenostalji" target="_blank" class="instagram-item relative aspect-square rounded-xl overflow-hidden group">
+          <img src="http://static.photos/food/320x240/22" alt="Instagram" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+          </div>
+        </a>
+        <a href="https://instagram.com/cafenostalji" target="_blank" class="instagram-item relative aspect-square rounded-xl overflow-hidden group">
+          <img src="http://static.photos/restaurant/320x240/33" alt="Instagram" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+          </div>
+        </a>
+        <a href="https://instagram.com/cafenostalji" target="_blank" class="instagram-item relative aspect-square rounded-xl overflow-hidden group">
+          <img src="http://static.photos/coffee/320x240/44" alt="Instagram" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+          </div>
+        </a>
+        <a href="https://instagram.com/cafenostalji" target="_blank" class="instagram-item relative aspect-square rounded-xl overflow-hidden group">
+          <img src="http://static.photos/nature/320x240/55" alt="Instagram" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+          </div>
+        </a>
+        <a href="https://instagram.com/cafenostalji" target="_blank" class="instagram-item relative aspect-square rounded-xl overflow-hidden group">
+          <img src="http://static.photos/workspace/320x240/66" alt="Instagram" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <i data-lucide="instagram" class="w-8 h-8 text-white"></i>
+          </div>
+        </a>
+      </div>
+      
+      <div class="text-center mt-8">
+        <a href="https://instagram.com/cafenostalji" target="_blank" class="inline-flex items-center gap-2 text-coffee-600 hover:text-coffee-800 font-medium transition">
+          <span>Daha fazlası için Instagram'da takip edin</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-coffee-900 text-coffee-100 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-12">
+        <!-- Brand -->
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-3 mb-4">
+            <svg class="w-12 h-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="45" fill="#9a6549"/>
+              <circle cx="50" cy="50" r="40" fill="#faf7f5"/>
+              <path d="M30 40 C30 40, 30 70, 50 70 C70 70, 70 40, 70 40" stroke="#9a6549" stroke-width="4" fill="none"/>
+              <path d="M70 45 C80 45, 80 60, 70 60" stroke="#9a6549" stroke-width="4" fill="none"/>
+              <path d="M40 30 C40 30, 35 20, 40 15" stroke="#7f523d" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M50 28 C50 28, 45 18, 50 13" stroke="#7f523d" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M60 30 C60 30, 55 20, 60 15" stroke="#7f523d" stroke-width="2.5" stroke-linecap="round"/>
+              <ellipse cx="50" cy="42" rx="15" ry="4" fill="#58382f"/>
+            </svg>
+            <span class="font-serif text-xl font-semibold text-white">Café Nostalji</span>
+          </div>
+          <p class="text-coffee-300 text-sm leading-relaxed">
+            Geleneksel Türk kahvaltısı ve özel kahve çeşitleriyle Kadıköy Moda'da hizmetinizdeyiz.
+          </p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Hızlı Linkler</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#menu" class="hover:text-white transition">Menü</a></li>
+            <li><a href="#gallery" class="hover:text-white transition">Galeri</a></li>
+            <li><a href="#about" class="hover:text-white transition">Hakkımızda</a></li>
+            <li><a href="#contact" class="hover:text-white transition">İletişim</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">İletişim</h4>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+              Moda Caddesi No:47, Kadıköy
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              +90 216 555 0142
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+              Her gün 08:00 - 23:00
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Social -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Sosyal Medya</h4>
+          <div class="flex gap-4">
+            <a href="https://instagram.com/cafenostalji" target="_blank" class="w-10 h-10 bg-coffee-800 rounded-full flex items-center justify-center hover:bg-coffee-700 transition">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-coffee-800 rounded-full flex items-center justify-center hover:bg-coffee-700 transition">
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-coffee-800 rounded-full flex items-center justify-center hover:bg-coffee-700 transition">
+              <i data-lucide="twitter" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-coffee-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-sm text-coffee-400">© 2024 Café Nostalji. Tüm hakları saklıdır.</p>
+        <div class="flex items-center gap-6 text-sm text-coffee-400">
+          <a href="#" class="hover:text-white transition">Gizlilik Politikası</a>
+          <a href="#" class="hover:text-white transition">Kullanım Koşulları</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" onclick="scrollToTop()" class="fixed bottom-8 right-8 w-12 h-12 bg-coffee-600 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-coffee-700 transition opacity-0 pointer-events-none z-40">
+    <i data-lucide="chevron-up" class="w-6 h-6"></i>
+  </button>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+    
+    // Gallery images array
+    const galleryImages = [
+      'http://static.photos/restaurant/1024x576/501',
+      'http://static.photos/coffee/1024x576/502',
+      'http://static.photos/restaurant/1024x576/503',
+      'http://static.photos/food/1024x576/504',
+      'http://static.photos/restaurant/1024x576/505',
+      'http://static.photos/coffee/1024x576/506',
+      'http://static.photos/food/1024x576/507',
+      'http://static.photos/restaurant/1024x576/508'
+    ];
+    
+    let currentImageIndex = 0;
+    
+    // Lightbox functions
+    function openLightbox(index) {
+      currentImageIndex = index;
+      document.getElementById('lightboxImage').src = galleryImages[index];
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+    
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+    }
+    
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightboxImage').src = galleryImages[currentImageIndex];
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!document.getElementById('lightbox').classList.contains('hidden')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+      }
+    });
+    
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    const navbarContainer = document.getElementById('navbarContainer');
+    const backToTop = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        navbarContainer.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'mx-4', 'mt-4', 'rounded-2xl');
+        backToTop.classList.remove('opacity-0', 'pointer-events-none');
+      } else {
+        navbarContainer.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'mx-4', 'mt-4', 'rounded-2xl');
+        backToTop.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
+    
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Menu filtering
+    const menuTabs = document.querySelectorAll('.menu-tab');
+    const menuCards = document.querySelectorAll('.menu-card');
+    
+    menuTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Update active tab
+        menuTabs.forEach(t => {
+          t.classList.remove('bg-coffee-600', 'text-white');
+          t.classList.add('bg-white', 'text-coffee-700');
+        });
+        tab.classList.remove('bg-white', 'text-coffee-700');
+        tab.classList.add('bg-coffee-600', 'text-white');
+        
+        // Filter cards
+        const category = tab.dataset.category;
+        menuCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+            card.classList.add('fade-in');
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Simulate form submission
+      contactForm.style.display = 'none';
+      successMessage.classList.remove('hidden');
+      successMessage.classList.add('fade-in');
+      
+      // Reset after 5 seconds
+      setTimeout(() => {
+        contactForm.reset();
+        contactForm.style.display = 'block';
+        successMessage.classList.add('hidden');
+      }, 5000);
+    });
+    
+    // Smooth scroll
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.menu-card, .gallery-item, .service-icon').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
